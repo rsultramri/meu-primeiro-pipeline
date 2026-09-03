@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clonar') {
+            steps {
+                echo 'Clonando repositório...'
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Executando build...'
+            }
+        }
+
+        stage('Testes') {
+            steps {
+                echo 'Rodando testes...'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Fazendo deploy...'
+            }
+        }
+    }
+
+    post {
+        success { echo '✅ Pipeline concluído com sucesso!' }
+        failure { echo '❌ Algo deu errado!' }
+    }
+}
