@@ -1,7 +1,7 @@
 import numpy as np
 
 # ─── Função de ativação Sigmoid ───────────────────────────────────────────────
-# Transforma qualquer número em um valor entre 0 e 1
+# Transforma qualquer número em um valor entre 0 e 1 pois o mlp entende 0 e 1 por arredondamento  
 # Ex: entrada 2.0 → saída 0.88 (88% de certeza)
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
